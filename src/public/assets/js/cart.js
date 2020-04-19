@@ -1,25 +1,25 @@
 import $ from 'jquery';
 
 function displayCartCount() {
-    let storedCartItems = localStorage.getItem('cartData');
-    storedCartItems = JSON.parse(storedCartItems);
-    let countStoredCartItems = 0;
-    if (storedCartItems) {
-        countStoredCartItems = storedCartItems.length;
-    }
-    const cartNumber = document.querySelector('.cart-number>span');
-    cartNumber.textContent = countStoredCartItems;
+	let storedCartItems = localStorage.getItem('cartData');
+	storedCartItems = JSON.parse(storedCartItems);
+	let countStoredCartItems = 0;
+	if (storedCartItems) {
+		countStoredCartItems = storedCartItems.length;
+	}
+	const cartNumber = document.querySelector('.cart-number>span');
+	cartNumber.textContent = countStoredCartItems;
 }
 
 function displayCartItems() {
-    let output = ``;
-    let totalPrice = 0;
+	let output = ``;
+	let totalPrice = 0;
 
-    let storedCartItems = localStorage.getItem('cartData');
-    storedCartItems = JSON.parse(storedCartItems);
-    if (storedCartItems) {
-        storedCartItems.forEach(cartItem => {
-            output += `
+	let storedCartItems = localStorage.getItem('cartData');
+	storedCartItems = JSON.parse(storedCartItems);
+	if (storedCartItems) {
+		storedCartItems.forEach(cartItem => {
+			output += `
                 <tr>
                     <td class="border px-4 py-2 text-center flex justify-center items-center content-center">
                         <div class="flex justify-between items-center content-center w-100">
@@ -30,7 +30,7 @@ function displayCartItems() {
                     <td class="border px-4 py-2 text-center">$${cartItem.price}</td>
                     <td class="border px-4 py-2 text-center">
                         <label>
-                            <input type="number" name="quantity" min="0" max="4" step="1" value="1"
+                            <input type="number" name="quantity" min="0" max="4" step="1" value="1" data-price="${cartItem.price}" class="item_number"
                                 style="text-align: center;">
                         </label>
                     </td>
@@ -43,86 +43,96 @@ function displayCartItems() {
                 </tr>
             `;
 
-            totalPrice += +cartItem.price;
-
-        });
-    }
-    document.querySelector('#cartItemData').innerHTML = output;
-    document.querySelector('.total_price_span').textContent = `$${totalPrice}`;
+			totalPrice += +cartItem.price;
+		});
+	}
+	totalPrice = totalPrice.toFixed(2);
+	document.querySelector('#cartItemData').innerHTML = output;
+	document.querySelector('.total_price_span').textContent = `$${totalPrice}`;
 }
 
-$(function () {
-    displayCartCount();
+$(function() {
+	displayCartCount();
 
-    if (location.pathname.includes('cart.html')) {
-        displayCartItems();
-    }
+	if (location.pathname.includes('cart.html')) {
+		displayCartItems();
+	}
 
-    const btnCart = document.querySelectorAll('.btn_cart');
-    btnCart.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const id = e.target.getAttribute('data-id');
-            const productName = e.target.getAttribute('data-name');
-            const price = e.target.getAttribute('data-price');
-            const src = e.target.getAttribute('data-src');
+	document.addEventListener('click', (e) => {
+		if (e.target.matches('.btn_remove')) {
+			e.preventDefault();
+			const cartItemId = e.target.getAttribute('data-id');
+			let storedCartItems = JSON.parse(localStorage.getItem('cartData'));
+			let index = 0;
+			let clickedItemIndex = 0;
+			storedCartItems.find(cart => {
+				index += 1;
+				if (cart.id === cartItemId) {
+					clickedItemIndex = index;
+				}
 
-            if (typeof (Storage) !== "undefined") {
+			});
 
-                let data = {};
-                let cartData = [];
+			storedCartItems.splice(clickedItemIndex - 1, 1);
+			localStorage.setItem('cartData', JSON.stringify(storedCartItems));
+			displayCartCount();
+			displayCartItems();
+		}
 
-                if (localStorage.getItem('cartData') && localStorage.getItem('cartData').length > 0) {
-                    cartData = JSON.parse(localStorage.getItem('cartData'));
-                }
+		if (e.target.matches('.btn_cart')) {
+			e.preventDefault();
+			const id = e.target.getAttribute('data-id');
+			const productName = e.target.getAttribute('data-name');
+			const price = e.target.getAttribute('data-price');
+			const src = e.target.getAttribute('data-src');
 
-                let idExists = false;
-                cartData.find(cart => {
-                    if (cart.id === id) {
-                        idExists = true;
-                    }
-                });
+			if (typeof (Storage) !== 'undefined') {
 
-                if (!idExists) {
-                    data = { id, productName, price, src };
-                    cartData.push(data);
+				let data = {};
+				let cartData = [];
 
-                    const cartNumber = document.querySelector('.cart_number');
+				if (localStorage.getItem('cartData') &&
+					localStorage.getItem('cartData').length > 0) {
+					cartData = JSON.parse(localStorage.getItem('cartData'));
+				}
 
-                    localStorage.setItem('cartData', JSON.stringify(cartData));
-                } else {
-                    alert('Product already added to the cart');
-                }
+				let idExists = false;
+				cartData.find(cart => {
+					if (cart.id === id) {
+						idExists = true;
+					}
+				});
 
-                displayCartCount();
+				if (!idExists) {
+					data = {id, productName, price, src};
+					cartData.push(data);
 
-            } else {
-                alert("Error: Localstorage not supported");
-            }
-        });
-    });
+					const cartNumber = document.querySelector('.cart_number');
 
-    const btnRemove = document.querySelectorAll('.btn_remove');
+					localStorage.setItem('cartData', JSON.stringify(cartData));
+				} else {
+					alert('Product already added to the cart');
+				}
 
-    btnRemove.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            const cartItemId = e.target.getAttribute('data-id');
-            let storedCartItems = JSON.parse(localStorage.getItem('cartData'));
-            let index = 0;
-            let clickedItemIndex = 0;
-            storedCartItems.find(cart => {
-                index += 1;
-                if (cart.id === cartItemId) {
-                    clickedItemIndex = index;
-                }
+				displayCartCount();
 
-            });
+			} else {
+				alert('Error: Localstorage not supported');
+			}
+		}
+	});
 
-            storedCartItems.splice(clickedItemIndex - 1, 1);
-            localStorage.setItem('cartData', JSON.stringify(storedCartItems));
-            location.reload();
-            // displayCartCount();
-            // displayCartItems();
-        })
+	document.addEventListener('change', (e) => {
+		if (e.target.matches('.item_number')) {
+			e.preventDefault();
+			const price = e.target.getAttribute('data-price');
+			const totalPrice = document.querySelector('.total_price_span');
 
-    });
+			let tPrice = +totalPrice.textContent.split('$')[1];
+			tPrice += +price;
+			tPrice = tPrice.toFixed(2);
+
+			totalPrice.textContent = `$${tPrice}`;
+		}
+	});
 });

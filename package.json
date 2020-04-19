@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server  --config webpack.dev.js --open",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "update": "npm update"
   },
   "keywords": [
     "stripe",
@@ -18,18 +19,20 @@
     "autoprefixer": "^9.7.6",
     "bootstrap": "^4.4.1",
     "css-loader": "^3.5.2",
+    "dotenv": "^8.2.0",
     "file-loader": "^6.0.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.2.0",
     "jquery": "^3.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.13.1",
+    "nodemon": "^2.0.3",
     "popper.js": "^1.16.1",
     "postcss-loader": "^3.0.0",
     "precss": "^4.0.0",
     "purgecss-webpack-plugin": "^2.1.2",
     "sass-loader": "^8.0.2",
-    "style-loader": "^1.1.3",
+    "style-loader": "^1.1.4",
     "tailwindcss": "^1.2.0",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
@@ -37,9 +40,12 @@
     "webpack-merge": "^4.2.2"
   },
   "dependencies": {
-    "@stripe/stripe-js": "^1.3.2",
+    "@stripe/stripe-js": "^1.4.0",
+    "axios": "^0.19.2",
     "clean-webpack-plugin": "^3.0.0",
+    "ejs": "^3.0.2",
     "express": "^4.17.1",
-    "stripe": "^8.39.2"
+    "mongoose": "^5.9.9",
+    "stripe": "^8.44.0"
   }
 }

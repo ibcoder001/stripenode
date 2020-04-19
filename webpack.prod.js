@@ -78,7 +78,7 @@ function walkDir(rootDir) {
 module.exports=merge(common,{
     mode: "production",
     output: {
-        filename: "[name].[contentHash].bundle.js",
+        filename: "public/[name].[contentHash].bundle.js",
         path: path.resolve(__dirname,"dist"),
     },
     module: {
@@ -99,7 +99,7 @@ module.exports=merge(common,{
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({filename: "[name].[contentHash].css"}),
+        new MiniCssExtractPlugin({filename: "public/[name].[contentHash].css"}),
         // new PurgecssPlugin({
         //     paths: glob.sync(`${PATHS.src}/**/*`, {nodir: true}),
         // }),
