@@ -1,0 +1,38 @@
+.cart-number {
+  position: relative;
+  top: -0.6rem;
+  left: -0.4rem;
+
+  span {
+    font-size: 1rem;
+    position: relative;
+    top: -1px;
+  }
+}
+
+.fix-position {
+  position: relative;
+  bottom: -6px;
+}
+
+.btn_cart, .btn_remove, .btn_purchase {
+  transition: all 0.2s;
+}
+
+.product-img {
+  height: auto;
+  width: 100%;
+}
+.cst-table {
+  overflow-x: auto;
+}
+
+.productPara {
+  width: 100%;
+  text-align: left;
+  padding: 0 0 0 4rem;
+}
+
+.w-100 {
+  width: 100%;
+}

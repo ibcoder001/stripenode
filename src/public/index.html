@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+            integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+        <title>Shopping Items</title>
+    </head>
+
+    <body class="flex flex-col">
+        <header class="bg-gray-100 text-orange-700 text-uppercase text-xl py-6 px-4">
+            <nav class="flex justify-between item-center content-center">
+                <a class="md:flex-auto md:text-center md:text-2xl lg:text-3xl" href="index.html">Shopping Items</a>
+                <a class="flex cursor-pointer" href="views/cart.html">
+                    <i class="fas fa-shopping-cart fix-position"></i>
+                    <div class="flex justify-center item-center bg-orange-400 rounded-full w-6 h-6 cart-number">
+                        <span class="text-white">1</span>
+                    </div>
+                </a>
+            </nav>
+        </header>
+        <main class="content p-6">
+            <div class="md:flex">
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/mugs.jpg" alt="Women Holding a mug" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Coffee Mug For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$9.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="1" data-name="Coffee Mug For Developers" data-price="9.99"
+                                    data-src="assets/images/mugs.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/laptop.jpg" alt="Laptop" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Laptop For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$900.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="2" data-name="Laptop For Developers" data-price="900.99"
+                                    data-src="assets/images/laptop.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex">
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/mobile.jpg" alt="Laptop" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Mobile For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$150.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="3" data-name="Mobile For Developers" data-price="150.99"
+                                    data-src="assets/images/mobile.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/graphics.jpg" alt="Laptop" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Graphics Card For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$499.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="4" data-name="Graphics Card For Developers" data-price="499.99"
+                                    data-src="assets/images/graphics.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:flex">
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/books.jpg" alt="Laptop" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Book For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$12.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="5" data-name="Book For Developers" data-price="12.99"
+                                    data-src="assets/images/books.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="max-w-sm w-full lg:max-w-full lg:flex mb-4 md:mx-4">
+                    <div
+                        class="h-100 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden card-left border border-gray-400 lg:border-l lg:border-t lg:border-gray-400">
+                        <img src="./assets/images/camera.jpg" alt="Laptop" class="product-img">
+                    </div>
+                    <div
+                        class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal text-center">
+                        <div class="mb-6">
+                            <div class="text-gray-900 font-bold text-xl mb-2">Camera For Developers</div>
+                            <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
+                                nihil.</p>
+                            <div
+                                class="flex sm:flex-col justify-between items-end sm:items-center content-end sm:content-center h-16 sm:mt-3">
+                                <div class="price text-orange-600 font-bold text-2xl">$900.99</div>
+                                <button
+                                    class="btn_cart text-gray-100 bg-orange-400 w-auto h-auto px-6 py-2 rounded cursor-pointer hover:bg-orange-600"
+                                    data-id="6" data-name="Camera For Developers" data-price="900.99"
+                                    data-src="assets/images/camera.jpg">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="bg-gray-100 text-orange-700 text-uppercase py-6 px-4 text-center">
+            <p>Copyright &copy; 2020 Saurabh Srivastava | All Rights Reserved</p>
+        </footer>
+    </body>
+
+</html>
