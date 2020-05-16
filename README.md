@@ -20,3 +20,9 @@
 
 #### MongoDB
 - [] Use it to save the data from Nodejs for user order.
+
+# Note:
+
+1. Webpack Setup was created following Colt Steel's Learn Webpack Tutorial Series[https://www.youtube.com/playlist?list=PLblA84xge2_zwxh3XJqy6UVxS60YdusY8] and modifying it as per my needs.
+
+2. The NodeJS side of code and stripe integration was learned and implemented following the demonstration tutorial by Web Dev Simplified's How to Setup Node and Stripe[https://www.youtube.com/watch?v=mI_-1tbIXQI]
